@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'data/local/local_storage_service.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -25,10 +26,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
       theme: Theme.of(context).copyWith(
+          colorScheme: const ColorScheme.dark().copyWith(
+            surface: AppColorsTheme.dark().bgColor,
+            primary: AppColorsTheme.dark().bgInput,
+            onPrimary: Colors.white,
+          ),
+          textTheme: const TextTheme().apply(
+            bodyColor: Colors.white,
+          ),
+          scaffoldBackgroundColor: AppColorsTheme.dark().bgColor,
           appBarTheme: AppBarTheme(
-              actionsIconTheme: const IconThemeData(color: Colors.white),
+              actionsIconTheme:
+                  IconThemeData(color: AppColorsTheme.dark().bgInput),
               iconTheme: const IconThemeData(color: Colors.white),
-              backgroundColor: AppColorsTheme.dark().bgColor),
+              backgroundColor: Colors.black),
           extensions: [
             AppColorsTheme.dark(),
             AppTypography.main(),

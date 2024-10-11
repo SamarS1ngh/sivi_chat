@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   //reference colors
-  static const Color _littleDarkBlue = Color(0XFF162c46);
-  static const Color _grey = Color(0xD69E9E9E);
+  static const Color _lavender = Color(0xffbb86fc);
+
   static const Color _red = Color(0xFFAF0121);
   static const Color _green = Color(0xFF00F318);
-  static const Color _darkBlue = Color(0XFF021427);
+  static const Color _black = Color.fromARGB(250, 26, 26, 26);
   static const Color _white = Color(0xFFFFFFFF);
 
   //actual colors to be used throughout the app
@@ -28,8 +28,8 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
 //defining dark theme
   factory AppColorsTheme.dark() {
     return const AppColorsTheme._internal(
-        bgColor: _darkBlue,
-        bgInput: _littleDarkBlue,
+        bgColor: _black,
+        bgInput: _lavender,
         snackbarValidation: _green,
         snackBarFailure: _red,
         textDefault: _white);

@@ -1,3 +1,3 @@
 class ApiEndPoints {
-  static const String tempUrl = "api/sample";
+  static const String dummyAPI = "tryninjastudy/dummyapi/db";
 }
